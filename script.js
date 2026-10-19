@@ -8,6 +8,7 @@ const products = [
 {title:'Catálogo para beleza e estética',category:'Catálogos',images:['catal.salao1.png','catal.salao2.png','catal.salao3.png'],description:'Modelo demonstrativo para salões e estúdios, personalizado com a identidade da sua marca.'},
 {title:'Catálogo para psicólogos',category:'Catálogos',images:['catal.psicol.png'],description:'Modelo demonstrativo com uma apresentação acolhedora das especialidades e do atendimento.'},
 {title:'Catálogo para terapias integrativas',category:'Catálogos',images:['catal.terap0.png','catal.terap.png'],description:'Modelo demonstrativo para apresentar seu espaço, suas sessões e suas formas de contato.'},
+{title:'Livro de histórias infantis',category:'Memórias',images:['livro-infantil.png'],description:'Uma história personalizada com o nome da criança e ilustrações encantadoras. Entrega digital em PDF, para ler, guardar e recordar.'},
 {title:'Kit Memórias Eternas',category:'Memórias',images:['kitpresente.png'],description:'Foto restaurada, música personalizada, vídeo de homenagem e cartão digital com QR Code.',price:'R$ 79,90'},
 {title:'Músicas personalizadas',category:'Memórias',images:['musicas.png'],description:'Sua história em uma música para aniversários, casamentos, homenagens e momentos especiais.',price:'A partir de R$ 19,90'},
 {title:'Restauração de fotos',category:'Memórias',images:['recuperação de fotos.png','recuperacaofoto.png'],description:'Uma nova vida para fotos antigas e danificadas. Danos graves são avaliados sob orçamento.',price:'1 foto: R$ 10 · 3 fotos: R$ 25'}
