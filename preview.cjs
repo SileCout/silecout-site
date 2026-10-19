@@ -1,0 +1,10 @@
+const fs=require('fs');
+const vm=require('vm');
+const source=fs.readFileSync('script.js','utf8');
+const data=source.slice(source.indexOf('const products ='),source.indexOf('const imagePath'))+'\nproducts';
+const products=vm.runInNewContext(data);
+for(const p of products)for(const image of p.images)if(!fs.existsSync('imagens/'+image))throw Error('Imagem ausente: '+image);
+console.log(products.length+' anúncios; todas as '+products.flatMap(p=>p.images).length+' referências de imagens encontradas.');
+const http=require('http'),path=require('path');
+const root=process.cwd();
+http.createServer((req,res)=>{let url;try{url=decodeURIComponent(req.url.split('?')[0]);}catch{res.writeHead(400);return res.end();}const file=path.resolve(root,'.'+(url==='/'?'/index.html':url));if(!file.startsWith(root+path.sep)){res.writeHead(403);return res.end();}fs.readFile(file,(err,data)=>{if(err){res.writeHead(404);return res.end('Arquivo não encontrado');}res.setHeader('Content-Type',({'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.png':'image/png','.jpeg':'image/jpeg'})[path.extname(file)]||'application/octet-stream');res.end(data);});}).listen(4173,'127.0.0.1',()=>console.log('Local: http://127.0.0.1:4173'));
